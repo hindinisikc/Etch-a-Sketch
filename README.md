@@ -4,9 +4,9 @@ Quiz
 What does this line of JavaScript do?
 
 javascript
-Copy
-Edit
+
 const square = document.createElement('div');
+
 What’s the purpose of square.classList.add('square'); in the code?
 
 How does the for loop in the JavaScript work to create 256 divs (16x16)?
@@ -121,3 +121,48 @@ Final Score: 6/8! 🎯
 You're doing really well! Want me to give you another quiz or move on to the next step? 🚀
 
 
+if I were to remake step 1 and 2 it would be
+
+Creating a html css and javascript file
+
+
+then create a div with the id of container 
+
+<div id="container"></div>
+
+then proceed to javascript
+
+i would first get the reference 
+
+const container = document.querySelector("#container");
+
+then add a variable for the amount of squares for the grid
+
+const gridSize = 16;
+
+then
+
+for (let i = 0; i < gridSize * gridSize; i++>) {
+    const square = document.createElement("div");
+    square = classList.add("square");
+
+    container = appendChild(square);
+}
+
+for the CSS:
+
+
+*container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px
+    border: 2px solid black
+}
+
+#square {
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+    box-sizing: border-box;
+    border 1px solid gray;
+}
