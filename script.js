@@ -1,5 +1,7 @@
+//1st and 2nd Step
+
 // Get the reference from html
-const container = document.querySelector(".container");
+const container = document.querySelector("#container");
 
 // number of squares per row and column
 const gridSize = 16;
@@ -17,8 +19,10 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     const square = document.createElement("div");
 
     // square.classList.add('square') assigns the class square to the div, which will be useful when we add styles later.
-    square.classList("square");
+    square.classList.add("square");
 
     //container.appendChild(square) adds the newly created div (square) into the container div, making it appear on the webpage (once we style it).
     container.appendChild(square);
 }
+
+//3rd and 4th step
