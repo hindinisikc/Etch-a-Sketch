@@ -405,7 +405,42 @@ Always generate random colors inside the event listener
 
 
 
+* NOTES *  03 / 06 / 2025
+
+PROJECT MODIFICATIONS:
 
 
+Instead of mouse hover pressed down and up
+
+first we added two new evenlisteners which are mousedown and mouseup
+
+✔ isDrawing flag ensures that color changes only happen when the mouse is held down.
+✔ mousedown on container starts drawing mode.
+✔ mouseup on document stops drawing mode (even if you release outside the grid).
+✔ mouseover event applies color only if isDrawing is true.
 
 
+    // detect when mouse is pressed down
+    container.addEventListener("mousedown", () => {
+        isDrawing = true;
+    });
+
+    container.addEventListener("mouseup", () => {
+        isDrawing = false;
+    });
+
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = `rgba(${r},${g},${b})`;  // Set color to black on hover
+            }
+            
+        });
+
+        // square.addEventListener('mouseout', () => {
+        //     square.style.backgroundColor = '';  // Reset to the original background color when the mouse leaves
+        // });
+    });
+
+
+added two new buttons and added eventlisteners click which swaps out the mode for pen and eraser

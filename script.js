@@ -2,12 +2,12 @@
 
 // Get the reference from html
 
-const resetButton = document.querySelector("#resetButton")
+const sizeButton = document.querySelector("#size-Button")
 const container = document.querySelector("#container");
 
 
 
-resetButton.addEventListener('click', () => {
+sizeButton.addEventListener('click', () => {
     let gridSize = prompt("Enter the number of squares per side (Max: 100):") // Prompt for grid size
 
     //Ensure the input is a number between 1 and 100
@@ -64,17 +64,47 @@ function createGrid(gridSize) {
 
     const squares = document.querySelectorAll(".square"); // Selects all squares
 
+    let isDrawing = false; // Flag to track if the mouse is held down
+    let currentMode = "pen";
+
+    penButton = document.getElementById("pen-Button");
+    eraserButton = document.getElementById("eraser-Button");
+
+    penButton.addEventListener("click", () => {
+        currentMode = "pen";
+    });
+
+    eraserButton.addEventListener("click", () => {
+        currentMode = "eraser";
+    });
+
+    // detect when mouse is pressed down
+    container.addEventListener("mousedown", () => {
+        isDrawing = true;
+    });
+
+    container.addEventListener("mouseup", () => {
+        isDrawing = false;
+    });
+
 
     // Loop through each square and add the hover effect
     const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-    
+    const r = randomBetween(0, 255); 
+    const g = randomBetween(0, 255);
+    const b = randomBetween(0, 255);   
 
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            const r = randomBetween(0, 255); 
-            const g = randomBetween(0, 255);
-            const b = randomBetween(0, 255);   
-            square.style.backgroundColor = `rgba(${r},${g},${b})`;  // Set color to black on hover
+            if (isDrawing) {
+                if (currentMode === "pen") {
+                    square.style.backgroundColor = `rgba(${r},${g},${b})`;  // Set color to black on hover
+                } else if (currentMode === "eraser") {
+                    square.style.backgroundColor = "";
+                }
+                
+            }
+            
         });
 
         // square.addEventListener('mouseout', () => {
@@ -84,4 +114,4 @@ function createGrid(gridSize) {
 }
 
 
-createGrid(16);
+createGrid(64);
