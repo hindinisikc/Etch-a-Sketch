@@ -1,12 +1,10 @@
 #button-tools {
     display: flex;
-    justify-content: center;
-    align-items: column;
-    flex-direction: column;
-    margin: 20px auto;
-    padding: 10px;  
+    align-items: flex-start;
+    flex-direction: column;         
     gap: 20px;
 
+ 
 }
 
 

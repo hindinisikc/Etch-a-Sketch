@@ -9,6 +9,13 @@
     
 }
 
+#wrapper {
+    display: flex; /* Aligns buttons and grid */
+    justify-content: center;
+    align-items: flex-start; /* Aligns to top */
+    gap: 30px; /* Space between buttons and grid */
+    margin: 20px auto;
+}
 
 #container {
     display: flex;
@@ -17,7 +24,6 @@
     align-items: center;
     width: 960px;
     height: 960px;
-    margin: 20px auto;
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
