@@ -66,10 +66,15 @@ function createGrid(gridSize) {
 
 
     // Loop through each square and add the hover effect
+    const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+    
+
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';  // Set color to black on hover
-        });
+            const r = randomBetween(0, 255); 
+            const g = randomBetween(0, 255);
+            const b = randomBetween(0, 255);   
+            square.style.backgroundColor = `rgba(${r},${g},${b})`;  
 
         // square.addEventListener('mouseout', () => {
         //     square.style.backgroundColor = '';  // Reset to the original background color when the mouse leaves

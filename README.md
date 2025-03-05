@@ -326,3 +326,86 @@ If the user types letters instead of numbers, parseInt() would return NaN, and w
 You absolutely nailed it! 🔥 Your understanding is solid, and you're getting more precise with your answers.
 
 Ready for the next step? 😈
+
+
+🔥 Final Exam Results! 🔥
+
+📌 Multiple Choice Review
+✅ 1. b) document.createElement("div") – Correct!
+❌ 2. c) Adds an existing square to another element → Incorrect. The correct answer is a) Creates a new square inside the container. appendChild(square) inserts the newly created square div into the container.
+✅ 3. b) display: flex; – Correct!
+✅ 4. b) addEventListener("mouseover", function() {...}) – Correct!
+✅ 5. c) To convert the string input into a number – Correct!
+✅ 6. c) The program prevents it and shows an alert – Correct!
+✅ 7. b) createGrid() – Correct!
+
+🔹 Score for Part 1: 6/7
+
+📌 Short Answer Review
+✅ 8. "It clears the previous grid first." – Correct! This prevents stacking multiple grids on top of each other.
+
+✅ 9. "Because we want to use the mouse hover event for changing the colors of the squares." – Correct! This makes the Etch-a-Sketch effect work smoothly without needing clicks.
+
+❌ 10. "flex-wrap: wrap;" → Incorrect. The best CSS property for handling border spacing issues is box-sizing: border-box; because it ensures borders don’t affect the overall width/height of elements.
+
+✅ 11. "The code will get buggy." – Partially correct, but be more specific. Without defer, the script runs before the HTML is fully loaded, meaning JavaScript might not find elements like container. This could lead to errors like null references.
+
+🔹 Score for Part 2: 3/4
+
+📌 Debugging & Fixing Code Review
+✅ 12. "The mistake is that there is no parseInt, leading to the script reading it as a string." – Correct!
+
+✅ 13. "Add a parseInt." – Correct, but ideally, you'd also add a return statement inside the validation to stop execution if the input is invalid:
+
+Fixed Code:
+
+javascript
+Copy
+Edit
+function resetGrid() {
+    let gridSize = parseInt(prompt("Enter the number of squares per side:"));
+    if (isNaN(gridSize) || gridSize < 1 || gridSize > 100) {
+        alert("Invalid input! Enter a number between 1 and 100.");
+        return;  // Stop execution if input is invalid
+    }
+
+    container.innerHTML = ""; 
+    createGrid(gridSize);
+}
+🔹 Score for Part 3: 2/2
+
+🏆 Bonus Challenge Review
+✅ 14. Your solution is close, but there’s a bug! Right now, your r, g, and b values are generated once and then used for all squares, meaning every square will turn the same color. Instead, the random color should be generated each time the event fires.
+
+Fixed Code:
+javascript
+Copy
+Edit
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+
+squares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        const r = randomBetween(0, 255); 
+        const g = randomBetween(0, 255);
+        const b = randomBetween(0, 255);
+        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;  
+    });
+});
+✅ Now each square gets a random color when hovered! 🔥
+
+🔹 Bonus Challenge: ✅ Pass!
+
+🎯 Final Score: 11/13 (Excellent Work!)
+💪 You absolutely killed it! You’re understanding JavaScript logic well, and your debugging skills are improving. Just make sure to:
+
+Carefully read what each method does (appendChild mistake)
+Use box-sizing: border-box; to avoid border issues
+Always generate random colors inside the event listener
+🔥 You're now officially DONE with this project! 🚀 Want to do another challenge, or do you want to tweak this project further? 😏
+
+
+
+
+
+
+
