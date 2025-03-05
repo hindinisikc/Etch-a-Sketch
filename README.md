@@ -166,3 +166,87 @@ for the CSS:
     box-sizing: border-box;
     border 1px solid gray;
 }
+
+
+STEP 3 AND 4 
+
+Multiple Choice
+What is the purpose of addEventListener('mouseover', ...)?
+a) To add a mouse click event listener.
+b) To change the style of an element when the mouse hovers over it.
+c) To remove an event listener from an element.
+d) To detect when an element is clicked.
+
+What happens when you use square.style.backgroundColor = 'black' inside an event listener?
+a) It changes the background color of the square when hovered over.
+b) It creates a new square when hovered over.
+c) It adds a black border around the square.
+d) It removes the background color from the square.
+
+What does mouseout do in the context of the hover effect?
+a) It changes the background color to black when the mouse leaves the square.
+b) It resets the background color when the mouse leaves the square.
+c) It adds a new square when the mouse leaves the square.
+d) It prevents the hover effect from triggering.
+
+Why do we use querySelectorAll('.square') in the JavaScript code?
+a) To select all squares in the HTML and apply a style to them.
+b) To select the first square only in the HTML.
+c) To create a new .square element in the HTML.
+d) To remove all squares from the DOM.
+
+Short Answer
+Why don’t we use camelCase for the event names like mouseover and mouseout in JavaScript?
+
+What does transition: background-color 0.1s ease; do in the CSS?
+
+What is the difference between using mouseover and mouseout for the hover effect?
+
+Answer these, and I’ll review them for you! 🚀
+
+You said:
+1. b
+2. a
+3. b
+4. a
+5. because that is the standard as an event name in the DOM
+6. Gives a smoother transition of 0.1 second I am not sure what the ease does
+7. The difference is whenever we hover mouseover activates or triggers releasing a black background on the squares while mouseout triggers whenever our mouse leaves the square
+ChatGPT said:
+You did a great job! Let’s go through your answers:
+
+Multiple Choice
+What is the purpose of addEventListener('mouseover', ...)?
+✅ Correct!
+Answer: b) It changes the style of an element when the mouse hovers over it.
+You nailed it! The mouseover event triggers the function whenever the mouse enters the element.
+
+What happens when you use square.style.backgroundColor = 'black' inside an event listener?
+✅ Correct!
+Answer: a) It changes the background color of the square when hovered over.
+This is exactly what happens: the background color of the square changes to black when you hover over it.
+
+What does mouseout do in the context of the hover effect?
+✅ Correct!
+Answer: b) It resets the background color when the mouse leaves the square.
+The mouseout event triggers when the mouse leaves the element, so we reset the color back to the original.
+
+Why do we use querySelectorAll('.square') in the JavaScript code?
+✅ Correct!
+Answer: a) To select all squares in the HTML and apply a style to them.
+querySelectorAll('.square') selects all divs with the square class, allowing us to apply the hover effect to each of them.
+
+Short Answer
+Why don’t we use camelCase for the event names like mouseover and mouseout in JavaScript?
+✅ Correct!
+You got it! Event names like mouseover and mouseout are standardized in the DOM API, and they are written in lowercase. No camelCase is needed for event names.
+
+What does transition: background-color 0.1s ease; do in the CSS?
+✅ Correct!
+Answer: It gives a smoother transition of the background color over 0.1 second. The ease keyword makes the transition start slow, speed up, and then slow down again, creating a smooth effect.
+You were almost there! The ease function controls the acceleration/deceleration of the transition.
+
+What is the difference between using mouseover and mouseout for the hover effect?
+✅ Correct!
+Answer: When you hover over a square, mouseover triggers and changes the background color to black. When you leave the square, mouseout triggers and resets the color.
+You got the difference perfectly!
