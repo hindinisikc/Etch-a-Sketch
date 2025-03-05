@@ -74,7 +74,8 @@ function createGrid(gridSize) {
             const r = randomBetween(0, 255); 
             const g = randomBetween(0, 255);
             const b = randomBetween(0, 255);   
-            square.style.backgroundColor = `rgba(${r},${g},${b})`;  
+            square.style.backgroundColor = `rgba(${r},${g},${b})`;  // Set color to black on hover
+        });
 
         // square.addEventListener('mouseout', () => {
         //     square.style.backgroundColor = '';  // Reset to the original background color when the mouse leaves
